@@ -22,8 +22,9 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
         <title>app</title>
 			
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -160,170 +161,124 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
-		<div class="inner">
-			<header>
-				<h1><a href="index.html" id="logo">Estaciones Agroclimáticas</a></h1>
-				<br>			
-			</header>
-		</div>
-				
-				
-					
-				<!-- lista de links para el DEZPLAZAMIENTO  -->
-			<nav id="nav">	
-					<ul>
-						<li><a href="#MAPA" 			id="MAPA-link"			  class="skel-layers-ignoreHref"><span class="icon fa-home">MAPA</span></a></li>
-						<li><a href="#15minutos" 		id="15minutos-link" 	  class="skel-layers-ignoreHref"><span class="icon fa-th">Datos cada 15 minutos</span></a></li>
-						<li><a href="#estadisticos" 	id="estadisticos-link" 	  class="skel-layers-ignoreHref"><span class="icon fa-th">Datos estadisticos</span></a></li>
-						<li><a href="#humedadrelativa"  id="humedadrelativa-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Temperatura y humedadrelativa</span></a></li>
-						<li><a href="#Pronostico" 		id="Pronostico-link"      class="skel-layers-ignoreHref"><span class="icon fa-th">Pronostico</span></a></li>
-						
-					</ul>
-			</nav>
-		
-			
-						<!-- MAPA -->
+		<div class="container-fluid">
+			<div class="container">
+				<div class="text-center">
+					<h1>Estaciones Agroclimáticas</h1>
+					<br>
+					<!-- MAPA -->
 					<section id="MAPA" class="one dark cover">
-						<div class="container">
-							<header>			
-							<h1>Estaciones </h1>
-							</header>
-
-						<!--	<footer>
-								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
-							</footer> -->
-		
+						<div class="container">		
+							<h3>Estaciones</h3>
+							<br>
+							<div id="map_canvas" ></div>
 						</div>														
 					</section>
-					
-					
-	<table>
-          <tr>
-				<td>
-					<div id="map_canvas" ></div>
-				</td>
+				</div>
+				<br>
+				<div class="container">
+					<form>
+							<!--Controles para apagar y encender capas-->
+		                	<input type="checkbox" value="1QmqsXAFzy6Ngivk8YXM0ZG2OEPttTiWKPs_Lv5pH"id="capa1" 	onClick="enciendecapas(this.value);" checked="checked">Municipios<br>
+		                    <input type="checkbox" value="1O2Xjgu4DaLVANS7zPMwO_fIajhvVPkuEFtZ0LUcx"id="capa2" 	onClick="enciendecapas(this.value);" checked="checked">Uso de suelo<br>
+							<input type="checkbox" value="1-evLAUWaXGtGY3QasNLavAsP9VIeZTMaBqw4aw-r"id="capa3" 	onClick="enciendecapas(this.value);" checked="checked">Edafologia<br>
+							<input type="checkbox" value="1vGQYZWyRr_EUvIXLd_mnmOLzhiayBIwAv7Z1N1lT"id="capa4" 	onClick="enciendecapas(this.value);" checked="checked">Hidrologia<br>
+		                 	<input type="checkbox" value="1bulqje2AuwBdIOrVHcfNjm4nWzWafCV_ZqUlbDjP"id="capa5" 	onClick="enciendecapas(this.value);" checked="checked">Frontera agricola
+						</form>
+						<br>
+						<form>
+							<input type="button" value="Boton" />
+							<button type="button">Cargar estaciones</button>
+						</form>	
 				
-          </tr>
-     </table>
-					
-					
-					
-					<table>
-          <tr>
-				<td>
-					<form>
-					<!--Controles para apagar y encender capas-->
-                	<input type="checkbox" value="1QmqsXAFzy6Ngivk8YXM0ZG2OEPttTiWKPs_Lv5pH"id="capa1" 	onClick="enciendecapas(this.value);" checked="checked">Municipios<br>
-                    <input type="checkbox" value="1O2Xjgu4DaLVANS7zPMwO_fIajhvVPkuEFtZ0LUcx"id="capa2" 	onClick="enciendecapas(this.value);" checked="checked">Uso de suelo<br>
-					<input type="checkbox" value="1-evLAUWaXGtGY3QasNLavAsP9VIeZTMaBqw4aw-r"id="capa3" 	onClick="enciendecapas(this.value);" checked="checked">Edafologia<br>
-					<input type="checkbox" value="1vGQYZWyRr_EUvIXLd_mnmOLzhiayBIwAv7Z1N1lT"id="capa4" 	onClick="enciendecapas(this.value);" checked="checked">Hidrologia<br>
-                 	<input type="checkbox" value="1bulqje2AuwBdIOrVHcfNjm4nWzWafCV_ZqUlbDjP"id="capa5" 	onClick="enciendecapas(this.value);" checked="checked">Frontera agricola
-					</form>
-				</td>
-				<td>
-			
-			
-					<form>
-					<input type="button" value="Boton" />
-					<button type="button">Cargar estaciones</button>
-					</form>	
-			
-					<form action="/action_page.php">
-				estacion: <select name="cars">
-					<option value="volvo">Volvo</option>
-					<option value="saab">Saab</option>
-					<option value="fiat">Fiat</option>
-					<option value="audi">Audi</option>
-					</select>
-
-					</form>
-				</td>
-          </tr>
-     </table>
-					
-			
-					<!-- Datos cada 15 minutos -->
+						<form action="/action_page.php">
+							estacion: <select name="cars">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="fiat">Fiat</option>
+							<option value="audi">Audi</option>
+							</select>
+						</form>
+				</div>
+				<div class="container">
+				<!-- Datos cada 15 minutos -->
 					<section id="15minutos" class="two">
 						<div class="container">
-							<header>
-								<h1>Datos cada 15 minutos</h1>					
-	<table border="1">							
-		
-		<tr>
-			<th>Velocidad del viento</th>
-			<th>---datos---</th>
-		</tr>
-		<tr>
-			<th scope="col">Direccion del viento;</th>
-      		<th scope="col">&nbsp;</th>
-		</tr>
-			
-	</table
-							</header>
-
-							<p></p>
-
+							<h3>Datos cada 15 minutos</h3>					
+							<table class="table table-striped">	
+								<thead>
+									<tr>
+										<th>Variable</th>
+										<th>Dato</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Velocidad del viento</td>
+										<td>-- datos --</td>
+									</tr>
+									<tr>
+										<td>Dirección del viento</td>
+										<td>-- datos --</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</section>
-					
-					
-					
-					<!-- Datos estadisticos -->
+				</div>
+				<!-- Estadisticos -->
+				<div class="container">
 					<section id="estadisticos" class="three">
 						<div class="container">
-							<header>
-								<h1>Datos Estadisticos</h1>
-								</header>
-				</div>
-				</section>
-
-				
-						<!-- Temperatura y humedad relativa -->
-					<section id="humedadrelativa" class="four">
-						<div class="container">
-
-							<header>
-								<h1>Temperatura y humedad relativa</h1>
-							</header>
-						</div>
-
-
-
-
-						</section>	<!-- Pronostico -->
-					<section id="Pronostico" class="five">
-						<div class="container">
-
-							<header>
-							<h1>Pronostico</h1>
-
-		<table border= "1" , id= pronostico>
-  			 <tr>
-    		  	<th scope="col">Dia 1</th>
-   			 <th scope="col">Datos;</th>
-   			 </tr>			 
-		<tr>
-			<th scope="col">Precipitacion</th>
-			<td>&nbsp;</td>
-  		 </tr>
- 		<tr>
-			<th>Temperatura maxima</th>
-			<th>---datos---</th>
-		</tr>
-		<tr>
-			<th>Temperatura minima</th>
-			<th>---datos---</th>
-		</tr>
-		<tr>
-			<th>Temperatura media</th>			<th>---datos---</th>
-		</tr>
-		
-
-</table
+							<h3>Datos Estadisticos</h3>
 								
-							</header>
-
 						</div>
 					</section>
-    </body>
+				</div>
+				<!-- Temperatura y humedad relativa -->
+				<div class="container">
+					<section id="humedadrelativa" class="four">
+						<div class="container">
+							<h3>Temperatura y humedad relativa</h3>
+								
+						</div>
+					</section>
+				</div>
+				<!-- Pronósticos -->
+				<div class="container">
+					<section id="Pronostico" class="four">
+						<div class="container">
+							<h3>Pronósticos</h3>
+							<table class="table table-striped">	
+								<thead>
+									<tr>
+										<th>Día</th>
+										<th>Precipitación</th>
+										<th>T Máx</th>
+										<th>T Mín</th>
+										<th>T Med</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Jueves</td>
+										<td>23 mm</td>
+										<td>24 ºC</td>
+										<td>4 ºC</td>
+										<td>15 ºC</td>
+									</tr>
+									<tr>
+										<td>Viernes</td>
+										<td>12 mm</td>
+										<td>23 ºC</td>
+										<td>2 ºC</td>
+										<td>16 ºC</td>
+									</tr>
+								</tbody>
+							</table>
+								
+						</div>
+					</section>
+				</div>			
+	</body>
 </html>
