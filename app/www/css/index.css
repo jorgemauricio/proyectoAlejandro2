@@ -1,0 +1,95 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+map_canvas {
+				 width: 480px;
+				 height: 360px;
+				 margin-bottom: 10px;
+				 top:0%; 
+				 left:0%;
+			   }
+
+
+body{
+    background: url(../images/crema.jpg);   
+	height: 780; width: 640px; margin: 0; padding: 0; 
+	background-attachment: fixed;
+	overflow: scroll;
+	
+}
+
+
+
+map { 
+	height: 50%; 
+	width: 50%;  	 
+	left: 50px;} 
+	 
+ul {
+	  list-style-type:none;
+	  margin:5;
+	  display:flex;
+	  
+	
+		}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+h3 {
+    font-size:1px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:left;
+}
+
+.boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: helvetica;
+    font-weight: 100;
+    font-size: 15px;
+    font-style: italic;
+    color: #006505;
+    background-color: #82b085;
+    border-radius: 5px;
+    border: 2px double #006505;
+  }
+  .boton_1:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
+  
+  
+ table {
+   width: 100%;
+   text-align: left;
+   border-collapse: collapse;
+   margin: 0 0 1em 0;
+   caption-side: top;
+}
+caption, td, th {
+   padding: 0.3em;
+}
+th, td {
+   border-bottom: 1px solid #000;
+   border-right: 1px solid #000;
+}
+th:lastchild, td:lastchild {
+    border-right: 0;
+}
+th {
+   width: 25%;
+}
+
